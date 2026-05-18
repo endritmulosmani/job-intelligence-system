@@ -50,60 +50,6 @@
                   },
                   {
                       "parameters":  {
-                                         "operation":  "getAll",
-                                         "limit":  10,
-                                         "simple":  false,
-                                         "filters":  {
-                                                         "q":  "is:unread newer_than:3d (Werkstudent OR Praktikum OR Internship OR Embedded OR Elektronik OR Elektrotechnik OR Automation OR Python OR C++ OR Firmware OR Mechatronik OR \"Application Engineering\" OR Applikationsingenieur OR SPS OR PLC OR IoT OR Linux OR Testing OR Automotive OR Halbleiter OR Semiconductor) (Duisburg OR Düsseldorf OR Essen OR NRW OR Hybrid OR Remote OR Warstein OR Soest)"
-                                                     },
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.gmail",
-                      "typeVersion":  2.1,
-                      "position":  [
-                                       -336,
-                                       -32
-                                   ],
-                      "id":  "887a57cc-9ccf-4e01-835d-d6a0fd81bafe",
-                      "name":  "Emails 2",
-                      "credentials":  {
-                                          "gmailOAuth2":  {
-                                                              "id":  "YOUR_CREDENTIAL_ID",
-                                                              "name":  "YOUR_CREDENTIAL_NAME"
-                                                          }
-                                      }
-                  },
-                  {
-                      "parameters":  {
-                                         "operation":  "getAll",
-                                         "limit":  10,
-                                         "simple":  false,
-                                         "filters":  {
-                                                         "q":  "is:unread newer_than:3d (Werkstudent OR Praktikum OR Internship OR Embedded OR Elektronik OR Elektrotechnik OR Automation OR Python OR C++ OR Firmware OR Mechatronik OR \"Application Engineering\" OR Applikationsingenieur OR SPS OR PLC OR IoT OR Linux OR Testing OR Automotive OR Halbleiter OR Semiconductor) (Duisburg OR Düsseldorf OR Essen OR NRW OR Hybrid OR Remote OR Warstein OR Soest)"
-                                                     },
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.gmail",
-                      "typeVersion":  2.1,
-                      "position":  [
-                                       -336,
-                                       240
-                                   ],
-                      "id":  "731d4729-542f-4f8b-9f7f-7f3351902e5a",
-                      "name":  "Emails 3",
-                      "credentials":  {
-                                          "gmailOAuth2":  {
-                                                              "id":  "YOUR_CREDENTIAL_ID",
-                                                              "name":  "YOUR_CREDENTIAL_NAME"
-                                                          }
-                                      }
-                  },
-                  {
-                      "parameters":  {
                                          "chatId":  "YOUR_TELEGRAM_CHAT_ID",
                                          "text":  "={{$json.message}}",
                                          "additionalFields":  {
@@ -119,52 +65,6 @@
                                    ],
                       "id":  "4c03609f-ffa9-4030-a0ee-f74ab56c4e77",
                       "name":  "E1",
-                      "credentials":  {
-                                          "telegramApi":  {
-                                                              "id":  "YOUR_CREDENTIAL_ID",
-                                                              "name":  "YOUR_CREDENTIAL_NAME"
-                                                          }
-                                      }
-                  },
-                  {
-                      "parameters":  {
-                                         "chatId":  "YOUR_TELEGRAM_CHAT_ID",
-                                         "text":  "=📩 ACCOUNT: YOUR_EMAIL_ACCOUNT\n\n🏢 Company:\n{{$json.from.value[0].name}}\n\n📧 Email:\n{{$json.from.value[0].address}}\n\n📌 Subject:\n{{$json.subject}}\n\n🕒 Date:\n{{$json.date}}\n\n🔗 Message ID:\n{{$json.messageId}}",
-                                         "additionalFields":  {
-
-                                                              }
-                                     },
-                      "type":  "n8n-nodes-base.telegram",
-                      "typeVersion":  1.2,
-                      "position":  [
-                                       624,
-                                       -32
-                                   ],
-                      "id":  "9bcb0a1f-dbd7-4bff-81b4-66445198207b",
-                      "name":  "E2",
-                      "credentials":  {
-                                          "telegramApi":  {
-                                                              "id":  "YOUR_CREDENTIAL_ID",
-                                                              "name":  "YOUR_CREDENTIAL_NAME"
-                                                          }
-                                      }
-                  },
-                  {
-                      "parameters":  {
-                                         "chatId":  "YOUR_TELEGRAM_CHAT_ID",
-                                         "text":  "=📩 ACCOUNT: YOUR_EMAIL_ACCOUNT\n\n🏢 Company:\n{{$json.from.value[0].name}}\n\n📧 Email:\n{{$json.from.value[0].address}}\n\n📌 Subject:\n{{$json.subject}}\n\n🕒 Date:\n{{$json.date}}\n\n🔗 Message ID:\n{{$json.messageId}}",
-                                         "additionalFields":  {
-
-                                                              }
-                                     },
-                      "type":  "n8n-nodes-base.telegram",
-                      "typeVersion":  1.2,
-                      "position":  [
-                                       624,
-                                       224
-                                   ],
-                      "id":  "48bf0583-1425-40d2-8921-fff3c0dc31e5",
-                      "name":  "E3",
                       "credentials":  {
                                           "telegramApi":  {
                                                               "id":  "YOUR_CREDENTIAL_ID",
@@ -194,46 +94,6 @@
                   },
                   {
                       "parameters":  {
-                                         "operation":  "markAsRead",
-                                         "messageId":  "={{ $(\u0027Emails 2\u0027).item.json.id }}"
-                                     },
-                      "type":  "n8n-nodes-base.gmail",
-                      "typeVersion":  2.1,
-                      "position":  [
-                                       -192,
-                                       -160
-                                   ],
-                      "id":  "b8e29bd5-35b9-4f6b-b5fe-0563df24279a",
-                      "name":  "Mark a message as read1",
-                      "credentials":  {
-                                          "gmailOAuth2":  {
-                                                              "id":  "YOUR_CREDENTIAL_ID",
-                                                              "name":  "YOUR_CREDENTIAL_NAME"
-                                                          }
-                                      }
-                  },
-                  {
-                      "parameters":  {
-                                         "operation":  "markAsRead",
-                                         "messageId":  "={{ $(\u0027Emails 3\u0027).item.json.id }}"
-                                     },
-                      "type":  "n8n-nodes-base.gmail",
-                      "typeVersion":  2.1,
-                      "position":  [
-                                       -240,
-                                       432
-                                   ],
-                      "id":  "3807e97b-5e78-4cac-869d-92fc90b9b1f2",
-                      "name":  "Mark a message as read2",
-                      "credentials":  {
-                                          "gmailOAuth2":  {
-                                                              "id":  "YOUR_CREDENTIAL_ID",
-                                                              "name":  "YOUR_CREDENTIAL_NAME"
-                                                          }
-                                      }
-                  },
-                  {
-                      "parameters":  {
                                          "aggregate":  "aggregateAllItemData",
                                          "options":  {
 
@@ -247,50 +107,6 @@
                                    ],
                       "id":  "968cb1f7-ad63-4a69-8022-6b9616222b36",
                       "name":  "Aggregate"
-                  },
-                  {
-                      "parameters":  {
-                                         "fieldsToAggregate":  {
-                                                                   "fieldToAggregate":  [
-                                                                                            {
-
-                                                                                            }
-                                                                                        ]
-                                                               },
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.aggregate",
-                      "typeVersion":  1,
-                      "position":  [
-                                       240,
-                                       -32
-                                   ],
-                      "id":  "e23228bd-08b5-4c45-b283-70bccfd68c88",
-                      "name":  "Aggregate1"
-                  },
-                  {
-                      "parameters":  {
-                                         "fieldsToAggregate":  {
-                                                                   "fieldToAggregate":  [
-                                                                                            {
-
-                                                                                            }
-                                                                                        ]
-                                                               },
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.aggregate",
-                      "typeVersion":  1,
-                      "position":  [
-                                       256,
-                                       224
-                                   ],
-                      "id":  "5922831c-9075-4c4f-8650-e35aec9511d8",
-                      "name":  "Aggregate2"
                   },
                   {
                       "parameters":  {
@@ -327,52 +143,6 @@
                   },
                   {
                       "parameters":  {
-                                         "operation":  "extractHtmlContent",
-                                         "extractionValues":  {
-                                                                  "values":  [
-                                                                                 {
-
-                                                                                 }
-                                                                             ]
-                                                              },
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.html",
-                      "typeVersion":  1.2,
-                      "position":  [
-                                       -160,
-                                       -32
-                                   ],
-                      "id":  "a398a4bc-5158-43cb-9d7f-4ee0fa6bf687",
-                      "name":  "HTML1"
-                  },
-                  {
-                      "parameters":  {
-                                         "operation":  "extractHtmlContent",
-                                         "extractionValues":  {
-                                                                  "values":  [
-                                                                                 {
-
-                                                                                 }
-                                                                             ]
-                                                              },
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.html",
-                      "typeVersion":  1.2,
-                      "position":  [
-                                       -160,
-                                       240
-                                   ],
-                      "id":  "3a72f9f7-46e4-4319-8343-dd4329f49153",
-                      "name":  "HTML2"
-                  },
-                  {
-                      "parameters":  {
                                          "mode":  "combine",
                                          "combineBy":  "combineByPosition",
                                          "options":  {
@@ -400,66 +170,6 @@
                                    ],
                       "id":  "dbd3cb2c-e90a-4f8b-8e51-79a5d0748c4c",
                       "name":  "Code in JavaScript"
-                  },
-                  {
-                      "parameters":  {
-                                         "mode":  "combine",
-                                         "combineBy":  "combineByPosition",
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.merge",
-                      "typeVersion":  3.2,
-                      "position":  [
-                                       48,
-                                       -32
-                                   ],
-                      "id":  "bd2c16ee-4029-4b5d-8bc8-2c414f5ee756",
-                      "name":  "Merge1"
-                  },
-                  {
-                      "parameters":  {
-                                         "mode":  "combine",
-                                         "combineBy":  "combineByPosition",
-                                         "options":  {
-
-                                                     }
-                                     },
-                      "type":  "n8n-nodes-base.merge",
-                      "typeVersion":  3.2,
-                      "position":  [
-                                       64,
-                                       224
-                                   ],
-                      "id":  "ee0df08b-0145-4a3a-b930-9794cf605b0e",
-                      "name":  "Merge2"
-                  },
-                  {
-                      "parameters":  {
-                                         "jsCode":  "function cleanText(value) {\n  return String(value || \u0027\u0027)\n    .replace(/\u0026/g, \u0027and\u0027)\n    .replace(/\u003c/g, \u0027\u0027)\n    .replace(/\u003e/g, \u0027\u0027)\n    .replace(/_/g, \u0027-\u0027)\n    .replace(/\\*/g, \u0027\u0027)\n    .replace(/\\[/g, \u0027\u0027)\n    .replace(/\\]/g, \u0027\u0027)\n    .replace(/\\(/g, \u0027\u0027)\n    .replace(/\\)/g, \u0027\u0027)\n    .replace(/`/g, \u0027\u0027)\n    .replace(/\"/g, \u0027\u0027)\n    .replace(/\u0027/g, \u0027\u0027)\n    .replace(/\\s+/g, \u0027 \u0027)\n    .trim();\n}\n\nfunction cleanUrl(value) {\n  return String(value || \u0027\u0027)\n    .replace(/\\s+/g, \u0027\u0027)\n    .trim();\n}\n\nfunction normalizeUrl(value) {\n  return cleanUrl(value).split(\u0027?\u0027)[0];\n}\n\nconst aggregated = $json.data || [];\nconst account = \u0027YOUR_EMAIL_ACCOUNT\u0027;\nconst maxLength = 3500;\n\nconst titleBlacklist = [\n  \u0027unsubscribe\u0027,\n  \u0027privacy\u0027,\n  \u0027datenschutz\u0027,\n  \u0027legal\u0027,\n  \u0027facebook\u0027,\n  \u0027twitter\u0027,\n  \u0027instagram\u0027,\n  \u0027glassdoor\u0027,\n  \u0027forbes\u0027,\n  \u0027sign in\u0027,\n  \u0027login\u0027,\n  \u0027update your profile\u0027,\n  \u0027view relevant jobs\u0027,\n  \u0027manage notifications\u0027,\n  \u0027preferences\u0027,\n  \u0027finance\u0027,\n  \u0027controlling\u0027,\n  \u0027accounting\u0027,\n  \u0027sales\u0027,\n  \u0027marketing\u0027,\n  \u0027human resources\u0027,\n  \u0027hr business\u0027,\n  \u0027procurement\u0027,\n  \u0027supply chain\u0027\n];\n\nconst linkBlacklist = [\n  \u0027unsubscribe\u0027,\n  \u0027privacy\u0027,\n  \u0027datenschutz\u0027,\n  \u0027legal\u0027,\n  \u0027facebook\u0027,\n  \u0027twitter\u0027,\n  \u0027instagram\u0027,\n  \u0027glassdoor\u0027,\n  \u0027forbes\u0027,\n  \u0027careerhub/me\u0027,\n  \u0027login\u0027\n];\n\nconst whitelist = [\n  \u0027werkstudent\u0027,\n  \u0027working student\u0027,\n  \u0027internship\u0027,\n  \u0027praktikum\u0027,\n  \u0027student\u0027,\n  \u0027engineer\u0027,\n  \u0027engineering\u0027,\n  \u0027developer\u0027,\n  \u0027electronics\u0027,\n  \u0027elektronik\u0027,\n  \u0027elektrotechnik\u0027,\n  \u0027automation\u0027,\n  \u0027automatisierung\u0027,\n  \u0027embedded\u0027,\n  \u0027firmware\u0027,\n  \u0027software\u0027,\n  \u0027hardware\u0027,\n  \u0027systems\u0027,\n  \u0027systeme\u0027,\n  \u0027application\u0027,\n  \u0027testing\u0027,\n  \u0027validation\u0027,\n  \u0027python\u0027,\n  \u0027c++\u0027,\n  \u0027iot\u0027,\n  \u0027microcontroller\u0027,\n  \u0027semiconductor\u0027,\n  \u0027halbleiter\u0027,\n  \u0027standard cells\u0027,\n  \u0027datenanalyse\u0027,\n  \u0027qualitätsmanagement\u0027\n];\n\nfunction isRelevant(title, link) {\n  const t = title.toLowerCase();\n  const l = link.toLowerCase();\n\n  if (!title || !link) return false;\n  if (!link.startsWith(\u0027http\u0027)) return false;\n  if (title.length \u003c 10) return false;\n\n  if (titleBlacklist.some(b =\u003e t.includes(b))) return false;\n  if (linkBlacklist.some(b =\u003e l.includes(b))) return false;\n  if (!whitelist.some(w =\u003e t.includes(w))) return false;\n\n  return true;\n}\n\nconst blocks = [];\nconst globalSeen = new Set();\n\nfor (const email of aggregated) {\n  const source = cleanText(email.from?.value?.[0]?.name || \u0027Unknown\u0027);\n  const sender = cleanText(email.from?.value?.[0]?.address || \u0027\u0027);\n  const jobs = email.jobs || [];\n  const links = email.links || [];\n\n  const jobLines = [];\n\n  for (let i = 0; i \u003c jobs.length; i++) {\n    const title = cleanText(jobs[i]);\n    const link = normalizeUrl(links[i]);\n\n    if (!isRelevant(title, link)) continue;\n\n    const key = `${title.toLowerCase()}|${link.toLowerCase()}`;\n    if (globalSeen.has(key)) continue;\n    globalSeen.add(key);\n\n    jobLines.push(`📌 ${title}\\n${link}`);\n  }\n\n  if (jobLines.length === 0) continue;\n\n  const block = `━━━━━━━━━━━━━━\n🏢 ${source}\n\n${jobLines.join(\u0027\\n\\n\u0027)}\n\n📧 ${sender}`;\n\n  blocks.push(block);\n}\n\nif (blocks.length === 0) {\n  return [];\n}\n\nconst messages = [];\nlet current = `📬 ACCOUNT: ${account}\\n\\n`;\n\nfor (const block of blocks) {\n  const candidate = current + block + \u0027\\n\\n\u0027;\n\n  if (candidate.length \u003e maxLength) {\n    if (current.trim() !== `📬 ACCOUNT: ${account}`) {\n      messages.push(current.trim());\n    }\n    current = `📬 ACCOUNT: ${account}\\n\\n${block}\\n\\n`;\n  } else {\n    current = candidate;\n  }\n}\n\nif (current.trim().length \u003e 0) {\n  messages.push(current.trim());\n}\n\nreturn messages.map((message, index) =\u003e ({\n  json: {\n    message: `Part ${index + 1}/${messages.length}\\n\\n${message}`\n  }\n}));"
-                                     },
-                      "type":  "n8n-nodes-base.code",
-                      "typeVersion":  2,
-                      "position":  [
-                                       432,
-                                       -32
-                                   ],
-                      "id":  "bc0b08e9-9698-433c-8388-bf1540040c28",
-                      "name":  "Code in JavaScript1"
-                  },
-                  {
-                      "parameters":  {
-                                         "jsCode":  "function cleanText(value) {\n  return String(value || \u0027\u0027)\n    .replace(/\u0026/g, \u0027and\u0027)\n    .replace(/\u003c/g, \u0027\u0027)\n    .replace(/\u003e/g, \u0027\u0027)\n    .replace(/_/g, \u0027-\u0027)\n    .replace(/\\*/g, \u0027\u0027)\n    .replace(/\\[/g, \u0027\u0027)\n    .replace(/\\]/g, \u0027\u0027)\n    .replace(/\\(/g, \u0027\u0027)\n    .replace(/\\)/g, \u0027\u0027)\n    .replace(/`/g, \u0027\u0027)\n    .replace(/\"/g, \u0027\u0027)\n    .replace(/\u0027/g, \u0027\u0027)\n    .replace(/\\s+/g, \u0027 \u0027)\n    .trim();\n}\n\nfunction cleanUrl(value) {\n  return String(value || \u0027\u0027)\n    .replace(/\\s+/g, \u0027\u0027)\n    .trim();\n}\n\nfunction normalizeUrl(value) {\n  return cleanUrl(value).split(\u0027?\u0027)[0];\n}\n\nconst aggregated = $json.data || [];\nconst account = \u0027YOUR_EMAIL_ACCOUNT\u0027;\nconst maxLength = 3500;\n\nconst titleBlacklist = [\n  \u0027unsubscribe\u0027,\n  \u0027privacy\u0027,\n  \u0027datenschutz\u0027,\n  \u0027legal\u0027,\n  \u0027facebook\u0027,\n  \u0027twitter\u0027,\n  \u0027instagram\u0027,\n  \u0027glassdoor\u0027,\n  \u0027forbes\u0027,\n  \u0027sign in\u0027,\n  \u0027login\u0027,\n  \u0027update your profile\u0027,\n  \u0027view relevant jobs\u0027,\n  \u0027manage notifications\u0027,\n  \u0027preferences\u0027,\n  \u0027finance\u0027,\n  \u0027controlling\u0027,\n  \u0027accounting\u0027,\n  \u0027sales\u0027,\n  \u0027marketing\u0027,\n  \u0027human resources\u0027,\n  \u0027hr business\u0027,\n  \u0027procurement\u0027,\n  \u0027supply chain\u0027\n];\n\nconst linkBlacklist = [\n  \u0027unsubscribe\u0027,\n  \u0027privacy\u0027,\n  \u0027datenschutz\u0027,\n  \u0027legal\u0027,\n  \u0027facebook\u0027,\n  \u0027twitter\u0027,\n  \u0027instagram\u0027,\n  \u0027glassdoor\u0027,\n  \u0027forbes\u0027,\n  \u0027careerhub/me\u0027,\n  \u0027login\u0027\n];\n\nconst whitelist = [\n  \u0027werkstudent\u0027,\n  \u0027working student\u0027,\n  \u0027internship\u0027,\n  \u0027praktikum\u0027,\n  \u0027student\u0027,\n  \u0027engineer\u0027,\n  \u0027engineering\u0027,\n  \u0027developer\u0027,\n  \u0027electronics\u0027,\n  \u0027elektronik\u0027,\n  \u0027elektrotechnik\u0027,\n  \u0027automation\u0027,\n  \u0027automatisierung\u0027,\n  \u0027embedded\u0027,\n  \u0027firmware\u0027,\n  \u0027software\u0027,\n  \u0027hardware\u0027,\n  \u0027systems\u0027,\n  \u0027systeme\u0027,\n  \u0027application\u0027,\n  \u0027testing\u0027,\n  \u0027validation\u0027,\n  \u0027python\u0027,\n  \u0027c++\u0027,\n  \u0027iot\u0027,\n  \u0027microcontroller\u0027,\n  \u0027semiconductor\u0027,\n  \u0027halbleiter\u0027,\n  \u0027standard cells\u0027,\n  \u0027datenanalyse\u0027,\n  \u0027qualitätsmanagement\u0027\n];\n\nfunction isRelevant(title, link) {\n  const t = title.toLowerCase();\n  const l = link.toLowerCase();\n\n  if (!title || !link) return false;\n  if (!link.startsWith(\u0027http\u0027)) return false;\n  if (title.length \u003c 10) return false;\n\n  if (titleBlacklist.some(b =\u003e t.includes(b))) return false;\n  if (linkBlacklist.some(b =\u003e l.includes(b))) return false;\n  if (!whitelist.some(w =\u003e t.includes(w))) return false;\n\n  return true;\n}\n\nconst blocks = [];\nconst globalSeen = new Set();\n\nfor (const email of aggregated) {\n  const source = cleanText(email.from?.value?.[0]?.name || \u0027Unknown\u0027);\n  const sender = cleanText(email.from?.value?.[0]?.address || \u0027\u0027);\n  const jobs = email.jobs || [];\n  const links = email.links || [];\n\n  const jobLines = [];\n\n  for (let i = 0; i \u003c jobs.length; i++) {\n    const title = cleanText(jobs[i]);\n    const link = normalizeUrl(links[i]);\n\n    if (!isRelevant(title, link)) continue;\n\n    const key = `${title.toLowerCase()}|${link.toLowerCase()}`;\n    if (globalSeen.has(key)) continue;\n    globalSeen.add(key);\n\n    jobLines.push(`📌 ${title}\\n${link}`);\n  }\n\n  if (jobLines.length === 0) continue;\n\n  const block = `━━━━━━━━━━━━━━\n🏢 ${source}\n\n${jobLines.join(\u0027\\n\\n\u0027)}\n\n📧 ${sender}`;\n\n  blocks.push(block);\n}\n\nif (blocks.length === 0) {\n  return [];\n}\n\nconst messages = [];\nlet current = `📬 ACCOUNT: ${account}\\n\\n`;\n\nfor (const block of blocks) {\n  const candidate = current + block + \u0027\\n\\n\u0027;\n\n  if (candidate.length \u003e maxLength) {\n    if (current.trim() !== `📬 ACCOUNT: ${account}`) {\n      messages.push(current.trim());\n    }\n    current = `📬 ACCOUNT: ${account}\\n\\n${block}\\n\\n`;\n  } else {\n    current = candidate;\n  }\n}\n\nif (current.trim().length \u003e 0) {\n  messages.push(current.trim());\n}\n\nreturn messages.map((message, index) =\u003e ({\n  json: {\n    message: `Part ${index + 1}/${messages.length}\\n\\n${message}`\n  }\n}));"
-                                     },
-                      "type":  "n8n-nodes-base.code",
-                      "typeVersion":  2,
-                      "position":  [
-                                       432,
-                                       224
-                                   ],
-                      "id":  "a84cc034-6af1-4b81-aaf1-9144696c5eb7",
-                      "name":  "Code in JavaScript2"
                   }
               ],
     "pinData":  {
@@ -468,248 +178,78 @@
     "connections":  {
                         "Schedule Trigger":  {
                                                  "main":  [
-                                                              [
-                                                                  {
-                                                                      "node":  "Emails 2",
-                                                                      "type":  "main",
-                                                                      "index":  0
-                                                                  },
-                                                                  {
-                                                                      "node":  "Emails 3",
-                                                                      "type":  "main",
-                                                                      "index":  0
-                                                                  },
-                                                                  {
-                                                                      "node":  "Emails 1",
-                                                                      "type":  "main",
-                                                                      "index":  0
-                                                                  }
-                                                              ]
+                                                              {
+                                                                  "node":  "Emails 1",
+                                                                  "type":  "main",
+                                                                  "index":  0
+                                                              }
                                                           ]
                                              },
                         "Emails 1":  {
                                          "main":  [
-                                                      [
-                                                          {
-                                                              "node":  "HTML",
-                                                              "type":  "main",
-                                                              "index":  0
-                                                          },
-                                                          {
-                                                              "node":  "Merge",
-                                                              "type":  "main",
-                                                              "index":  1
-                                                          },
-                                                          {
-                                                              "node":  "Mark a message as read",
-                                                              "type":  "main",
-                                                              "index":  0
-                                                          }
-                                                      ]
-                                                  ]
-                                     },
-                        "Emails 2":  {
-                                         "main":  [
-                                                      [
-                                                          {
-                                                              "node":  "Mark a message as read1",
-                                                              "type":  "main",
-                                                              "index":  0
-                                                          },
-                                                          {
-                                                              "node":  "HTML1",
-                                                              "type":  "main",
-                                                              "index":  0
-                                                          },
-                                                          {
-                                                              "node":  "Merge1",
-                                                              "type":  "main",
-                                                              "index":  1
-                                                          }
-                                                      ]
-                                                  ]
-                                     },
-                        "Emails 3":  {
-                                         "main":  [
-                                                      [
-                                                          {
-                                                              "node":  "Mark a message as read2",
-                                                              "type":  "main",
-                                                              "index":  0
-                                                          },
-                                                          {
-                                                              "node":  "HTML2",
-                                                              "type":  "main",
-                                                              "index":  0
-                                                          },
-                                                          {
-                                                              "node":  "Merge2",
-                                                              "type":  "main",
-                                                              "index":  1
-                                                          }
-                                                      ]
-                                                  ]
-                                     },
-                        "E1":  {
-                                   "main":  [
-                                                [
-
-                                                ]
-                                            ]
-                               },
-                        "E2":  {
-                                   "main":  [
-                                                [
-
-                                                ]
-                                            ]
-                               },
-                        "E3":  {
-                                   "main":  [
-                                                [
-
-                                                ]
-                                            ]
-                               },
-                        "Aggregate":  {
-                                          "main":  [
-                                                       [
-                                                           {
-                                                               "node":  "Code in JavaScript",
-                                                               "type":  "main",
-                                                               "index":  0
-                                                           }
-                                                       ]
-                                                   ]
-                                      },
-                        "Mark a message as read":  {
-                                                       "main":  [
-                                                                    [
-
-                                                                    ]
-                                                                ]
-                                                   },
-                        "Aggregate1":  {
-                                           "main":  [
-                                                        [
-                                                            {
-                                                                "node":  "Code in JavaScript1",
-                                                                "type":  "main",
-                                                                "index":  0
-                                                            }
-                                                        ]
-                                                    ]
-                                       },
-                        "Aggregate2":  {
-                                           "main":  [
-                                                        [
-                                                            {
-                                                                "node":  "Code in JavaScript2",
-                                                                "type":  "main",
-                                                                "index":  0
-                                                            }
-                                                        ]
-                                                    ]
-                                       },
-                        "HTML":  {
-                                     "main":  [
-                                                  [
+                                                      {
+                                                          "node":  "HTML",
+                                                          "type":  "main",
+                                                          "index":  0
+                                                      },
                                                       {
                                                           "node":  "Merge",
+                                                          "type":  "main",
+                                                          "index":  1
+                                                      },
+                                                      {
+                                                          "node":  "Mark a message as read",
                                                           "type":  "main",
                                                           "index":  0
                                                       }
                                                   ]
+                                     },
+                        "HTML":  {
+                                     "main":  [
+                                                  {
+                                                      "node":  "Merge",
+                                                      "type":  "main",
+                                                      "index":  0
+                                                  }
                                               ]
                                  },
                         "Merge":  {
                                       "main":  [
-                                                   [
+                                                   {
+                                                       "node":  "Aggregate",
+                                                       "type":  "main",
+                                                       "index":  0
+                                                   }
+                                               ]
+                                  },
+                        "Aggregate":  {
+                                          "main":  [
                                                        {
-                                                           "node":  "Aggregate",
+                                                           "node":  "Code in JavaScript",
                                                            "type":  "main",
                                                            "index":  0
                                                        }
                                                    ]
-                                               ]
-                                  },
+                                      },
                         "Code in JavaScript":  {
                                                    "main":  [
-                                                                [
-                                                                    {
-                                                                        "node":  "E1",
-                                                                        "type":  "main",
-                                                                        "index":  0
-                                                                    }
-                                                                ]
+                                                                {
+                                                                    "node":  "E1",
+                                                                    "type":  "main",
+                                                                    "index":  0
+                                                                }
                                                             ]
                                                },
-                        "Merge1":  {
-                                       "main":  [
-                                                    [
-                                                        {
-                                                            "node":  "Aggregate1",
-                                                            "type":  "main",
-                                                            "index":  0
-                                                        }
-                                                    ]
-                                                ]
-                                   },
-                        "HTML1":  {
-                                      "main":  [
-                                                   [
-                                                       {
-                                                           "node":  "Merge1",
-                                                           "type":  "main",
-                                                           "index":  0
-                                                       }
-                                                   ]
-                                               ]
-                                  },
-                        "Merge2":  {
-                                       "main":  [
-                                                    [
-                                                        {
-                                                            "node":  "Aggregate2",
-                                                            "type":  "main",
-                                                            "index":  0
-                                                        }
-                                                    ]
-                                                ]
-                                   },
-                        "HTML2":  {
-                                      "main":  [
-                                                   [
-                                                       {
-                                                           "node":  "Merge2",
-                                                           "type":  "main",
-                                                           "index":  0
-                                                       }
-                                                   ]
-                                               ]
-                                  },
-                        "Code in JavaScript1":  {
-                                                    "main":  [
-                                                                 [
-                                                                     {
-                                                                         "node":  "E2",
-                                                                         "type":  "main",
-                                                                         "index":  0
-                                                                     }
-                                                                 ]
-                                                             ]
-                                                },
-                        "Code in JavaScript2":  {
-                                                    "main":  [
-                                                                 [
-                                                                     {
-                                                                         "node":  "E3",
-                                                                         "type":  "main",
-                                                                         "index":  0
-                                                                     }
-                                                                 ]
-                                                             ]
-                                                }
+                        "E1":  {
+                                   "main":  [
+
+                                            ]
+                               },
+                        "Mark a message as read":  {
+                                                       "main":  [
+
+                                                                ]
+                                                   }
                     },
     "active":  false,
     "settings":  {
