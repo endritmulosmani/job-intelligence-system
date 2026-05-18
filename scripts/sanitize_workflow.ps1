@@ -36,7 +36,7 @@ $text = [regex]::Replace(
     'YOUR_GOOGLE_CLIENT_SECRET'
 )
 
-# Replace Telegram chatId numeric fields
+# Replace Telegram chatId fields
 $text = [regex]::Replace(
     $text,
     '(?i)("chatId"\s*:\s*)-?\d+',
@@ -49,7 +49,6 @@ $text = [regex]::Replace(
     '$1YOUR_TELEGRAM_CHAT_ID$2'
 )
 
-# Replace chat_id fields if present
 $text = [regex]::Replace(
     $text,
     '(?i)("chat_id"\s*:\s*)-?\d+',

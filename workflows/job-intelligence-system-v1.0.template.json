@@ -36,8 +36,8 @@
                       "type":  "n8n-nodes-base.gmail",
                       "typeVersion":  2.1,
                       "position":  [
-                                       -336,
-                                       -352
+                                       -352,
+                                       -224
                                    ],
                       "id":  "ea6b8702-69d3-423e-a08e-0e99a1d94b6e",
                       "name":  "Emails 1",
@@ -60,8 +60,8 @@
                       "type":  "n8n-nodes-base.telegram",
                       "typeVersion":  1.2,
                       "position":  [
-                                       608,
-                                       -352
+                                       592,
+                                       -224
                                    ],
                       "id":  "4c03609f-ffa9-4030-a0ee-f74ab56c4e77",
                       "name":  "E1",
@@ -80,8 +80,8 @@
                       "type":  "n8n-nodes-base.gmail",
                       "typeVersion":  2.1,
                       "position":  [
-                                       -176,
-                                       -512
+                                       -192,
+                                       -384
                                    ],
                       "id":  "53d5c51d-9c48-45bb-bc27-9c3b5d6e2f57",
                       "name":  "Mark a message as read",
@@ -102,8 +102,8 @@
                       "type":  "n8n-nodes-base.aggregate",
                       "typeVersion":  1,
                       "position":  [
-                                       208,
-                                       -352
+                                       192,
+                                       -224
                                    ],
                       "id":  "968cb1f7-ad63-4a69-8022-6b9616222b36",
                       "name":  "Aggregate"
@@ -135,8 +135,8 @@
                       "type":  "n8n-nodes-base.html",
                       "typeVersion":  1.2,
                       "position":  [
-                                       -176,
-                                       -352
+                                       -192,
+                                       -224
                                    ],
                       "id":  "ef2b51bb-6024-45d9-b355-71c307967895",
                       "name":  "HTML"
@@ -152,8 +152,8 @@
                       "type":  "n8n-nodes-base.merge",
                       "typeVersion":  3.2,
                       "position":  [
-                                       16,
-                                       -352
+                                       0,
+                                       -224
                                    ],
                       "id":  "548a9727-7108-4da1-a871-b879febab6bf",
                       "name":  "Merge"
@@ -165,8 +165,8 @@
                       "type":  "n8n-nodes-base.code",
                       "typeVersion":  2,
                       "position":  [
-                                       416,
-                                       -352
+                                       400,
+                                       -224
                                    ],
                       "id":  "dbd3cb2c-e90a-4f8b-8e51-79a5d0748c4c",
                       "name":  "Code in JavaScript"
@@ -178,78 +178,94 @@
     "connections":  {
                         "Schedule Trigger":  {
                                                  "main":  [
-                                                              {
-                                                                  "node":  "Emails 1",
-                                                                  "type":  "main",
-                                                                  "index":  0
-                                                              }
+                                                              [
+                                                                  {
+                                                                      "node":  "Emails 1",
+                                                                      "type":  "main",
+                                                                      "index":  0
+                                                                  }
+                                                              ]
                                                           ]
                                              },
                         "Emails 1":  {
                                          "main":  [
-                                                      {
-                                                          "node":  "HTML",
-                                                          "type":  "main",
-                                                          "index":  0
-                                                      },
+                                                      [
+                                                          {
+                                                              "node":  "HTML",
+                                                              "type":  "main",
+                                                              "index":  0
+                                                          },
+                                                          {
+                                                              "node":  "Merge",
+                                                              "type":  "main",
+                                                              "index":  1
+                                                          },
+                                                          {
+                                                              "node":  "Mark a message as read",
+                                                              "type":  "main",
+                                                              "index":  0
+                                                          }
+                                                      ]
+                                                  ]
+                                     },
+                        "E1":  {
+                                   "main":  [
+                                                [
+
+                                                ]
+                                            ]
+                               },
+                        "Aggregate":  {
+                                          "main":  [
+                                                       [
+                                                           {
+                                                               "node":  "Code in JavaScript",
+                                                               "type":  "main",
+                                                               "index":  0
+                                                           }
+                                                       ]
+                                                   ]
+                                      },
+                        "Mark a message as read":  {
+                                                       "main":  [
+                                                                    [
+
+                                                                    ]
+                                                                ]
+                                                   },
+                        "HTML":  {
+                                     "main":  [
+                                                  [
                                                       {
                                                           "node":  "Merge",
-                                                          "type":  "main",
-                                                          "index":  1
-                                                      },
-                                                      {
-                                                          "node":  "Mark a message as read",
                                                           "type":  "main",
                                                           "index":  0
                                                       }
                                                   ]
-                                     },
-                        "HTML":  {
-                                     "main":  [
-                                                  {
-                                                      "node":  "Merge",
-                                                      "type":  "main",
-                                                      "index":  0
-                                                  }
                                               ]
                                  },
                         "Merge":  {
                                       "main":  [
-                                                   {
-                                                       "node":  "Aggregate",
-                                                       "type":  "main",
-                                                       "index":  0
-                                                   }
-                                               ]
-                                  },
-                        "Aggregate":  {
-                                          "main":  [
+                                                   [
                                                        {
-                                                           "node":  "Code in JavaScript",
+                                                           "node":  "Aggregate",
                                                            "type":  "main",
                                                            "index":  0
                                                        }
                                                    ]
-                                      },
+                                               ]
+                                  },
                         "Code in JavaScript":  {
                                                    "main":  [
-                                                                {
-                                                                    "node":  "E1",
-                                                                    "type":  "main",
-                                                                    "index":  0
-                                                                }
-                                                            ]
-                                               },
-                        "E1":  {
-                                   "main":  [
-
-                                            ]
-                               },
-                        "Mark a message as read":  {
-                                                       "main":  [
-
+                                                                [
+                                                                    {
+                                                                        "node":  "E1",
+                                                                        "type":  "main",
+                                                                        "index":  0
+                                                                    }
                                                                 ]
-                                                   }
+                                                            ]
+                                               }
                     },
     "active":  false,
     "settings":  {
