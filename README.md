@@ -46,3 +46,31 @@ Schedule Trigger
 → JavaScript Filtering
 → Telegram Notification
 → Mark Email as Read
+```
+
+Repository Structure
+```
+job-intelligence-system/
+│
+├── workflows/
+│   └── job-intelligence-system-v1.0.template.json
+│
+├── scripts/
+│   └── sanitize_workflow.ps1
+│
+├── docs/
+├── screenshots/
+├── notes/
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+Security
+
+The public workflow file is sanitized. Private values such as Gmail addresses, Telegram chat IDs, OAuth secrets, and bot tokens are not included.
+
+The .private.json workflow export is ignored through .gitignore.
+
+Status
+
+Version 1.0 is operational locally and supports automated job-alert monitoring through Gmail and Telegram.
