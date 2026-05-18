@@ -74,3 +74,5 @@ The .private.json workflow export is ignored through .gitignore.
 Status
 
 Version 1.0 is operational locally and supports automated job-alert monitoring through Gmail and Telegram.
+
+The template demonstrates one Gmail account branch. Additional Gmail accounts can be added by duplicating the branch and replacing credentials/placeholders.
